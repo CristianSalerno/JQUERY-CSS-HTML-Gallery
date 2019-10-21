@@ -8,9 +8,8 @@ function cargarModal(event) {
     var url = $(this).find('img').attr('src');
     var titulo = $(this).find('h4').text()
     var subtitulo = $(this).find('h3').text()
-    var cerrar = $(this).find('.cerrar').text()
-    console.log(cerrar)
-
+    var altoBoton = $(this).offset().top;
+    var top = $(window).scrollTop() + 60;
 
     $('body').append(`<div class="modal">
                     <div class="manto">
@@ -28,7 +27,7 @@ function cargarModal(event) {
 
     $('.modal').fadeIn(400);
     $('.modal .contenedor').animate({
-        'top': '60px'
+        'top': top + 'px'
     }, 400)
     $('.modal .manto').css('height', document.body.clientHeight);
     $('.modal .cerrar').on('click', borrarModal);
@@ -37,8 +36,9 @@ function cargarModal(event) {
 }
 
 function borrarModal(event) {
-
-    $('.modal').fadeOut(400, function () {
-        $('.modal').remove()
-    })
+    if (event.keyCode == 27 || event.type == 'click') {
+        $('.modal').fadeOut(400, function () {
+            $('.modal').remove()
+        })
+    }
 }

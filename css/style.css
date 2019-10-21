@@ -67,14 +67,6 @@ main section article {
     position: relative;
 }
 
-@media (max-width:426px) {
-    main section .margen {
-        width: 95%;
-        margin: 0 auto;
-        margin-top: -20px;
-    }
-}
-
 main .works .margen .velo {
     text-align: center;
     padding: 30% 0;
@@ -148,4 +140,18 @@ main .works .margen:hover h4 {
     right: 30px;
     color: white;
     cursor: pointer;
+}
+
+
+@media (max-width:426px) {
+    main section .margen {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: -20px;
+    }
+
+    .modal .contenedor {
+        width: 95%;
+        left: 2.5%;
+    }
 }
